@@ -1,0 +1,4 @@
+X11Forwarding yes 
+AllowAgentForwarding yes 
+PermitRootLogin yes
+LogLevel VERBOSE
