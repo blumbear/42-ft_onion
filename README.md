@@ -203,6 +203,9 @@ ssh -v -p 4242 sshuser@localhost
 # Check if key is installed
 ssh -v -p 4242 sshuser@localhost
 
+# Delete key
+ssh-keygen -f '/home/tom/.ssh/known_hosts' -R '[localhost]:4242'
+
 # Reinstall key
 ssh-copy-id -i ~/.ssh/id_rsa.pub -p 4242 sshuser@localhost
 ```
