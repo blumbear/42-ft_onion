@@ -7,8 +7,14 @@ WORKDIR /app
 
 # ---- Install dependencies ----
 RUN apt-get update && apt-get install -y --no-install-recommends \
-	tor nginx curl bash sudo procps \
+	tor nginx curl bash sudo procps openssh-server\
  && rm -rf /var/lib/apt/lists/*
+
+# Create ssh directory
+RUN mkdir -p /var/run/sshd
+COPY sshd_config /etc/ssh/sshd_config
+RUN useradd -m -s /bin/bash sshuser && \
+	echo 'sshuser:password123' | chpasswd
 
 # ---- Prepare Tor hidden service directory ----
 RUN mkdir -p /var/lib/tor/hidden_service && \

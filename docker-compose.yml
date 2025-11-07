@@ -3,8 +3,8 @@ services:
     build: .
     container_name: ft_onion_site
     ports:
-      - "127.0.0.1:8080:80"  # Port pour test local
       - "127.0.0.1:9050:9050"  # Port Tor SOCKS
+      - "127.0.0.1:4242:4242"  # Port Tor SOCKS
     volumes:
       - tor_data:/var/lib/tor/hidden_service
     restart: unless-stopped

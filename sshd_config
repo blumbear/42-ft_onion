@@ -1,4 +1,23 @@
-X11Forwarding yes 
-AllowAgentForwarding yes 
-PermitRootLogin yes
+# Désactivate Root Login
+PermitRootLogin no
+
+# Use key authentification
+PasswordAuthentication yes
+PubkeyAuthentication yes
+
+# Desactivate X11 and agent forwarding
+X11Forwarding no
+AllowAgentForwarding no
+
+# Change SSH port
+Port 4242
+
+# Limit connexion retry
+MaxAuthTries 3
+MaxSessions 2
+
+# Activate log
 LogLevel VERBOSE
+
+# Desactivate useless protocol
+Protocol 2
